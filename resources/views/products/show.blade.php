@@ -13,7 +13,7 @@
     </div>
     @endif
     @if ($product->image_path)
-    <img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}" style="max-width: 400px;">
+    <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}" style="max-width: 400px;">
     @endif
 
     <p>{{ $product->description }}</p>
