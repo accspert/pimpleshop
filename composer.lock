@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "97d43d756bd4bfa6e91320aca443d0c0",
+=======
+    "content-hash": "fe33f98a750b8c5a51b30c78bd3fab21",
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
     "packages": [
         {
             "name": "brick/math",
@@ -554,6 +558,7 @@
             "time": "2023-06-01T07:04:22+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "firebase/php-jwt",
             "version": "v6.11.1",
             "source": {
@@ -617,6 +622,8 @@
             "time": "2025-04-09T20:32:01+00:00"
         },
         {
+=======
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
             "name": "fruitcake/php-cors",
             "version": "v1.3.0",
             "source": {
@@ -688,6 +695,7 @@
             "time": "2023-10-12T05:21:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "google/auth",
             "version": "v1.47.1",
             "source": {
@@ -1648,6 +1656,8 @@
             "time": "2025-05-28T18:52:35+00:00"
         },
         {
+=======
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
             "name": "graham-campbell/result-type",
             "version": "v1.1.3",
             "source": {
@@ -1710,6 +1720,7 @@
             "time": "2024-07-20T21:45:45+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "grpc/grpc",
             "version": "1.74.0",
             "source": {
@@ -1754,6 +1765,8 @@
             "time": "2025-07-24T20:02:16+00:00"
         },
         {
+=======
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
             "name": "guzzlehttp/guzzle",
             "version": "7.10.0",
             "source": {
@@ -3512,6 +3525,7 @@
             "time": "2025-08-21T11:53:16+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "psr/cache",
             "version": "3.0.0",
             "source": {
@@ -3561,6 +3575,8 @@
             "time": "2021-02-03T23:26:27+00:00"
         },
         {
+=======
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
             "name": "psr/clock",
             "version": "1.0.0",
             "source": {
@@ -4263,6 +4279,7 @@
             "time": "2025-09-04T20:59:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "rize/uri-template",
             "version": "0.3.8",
             "source": {
@@ -4325,6 +4342,8 @@
             "time": "2024-08-30T07:09:40+00:00"
         },
         {
+=======
+>>>>>>> f508e4d06281f74fd13a6d510ad3ba058cb340d4
             "name": "symfony/console",
             "version": "v6.0.19",
             "source": {

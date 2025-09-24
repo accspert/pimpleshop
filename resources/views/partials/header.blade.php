@@ -2,7 +2,7 @@
     <div class="container">
         <h1>
             <a href="{{ route('home') }}">
-                <img src="{{ asset('images/logo_with_tag.png') }}" alt="PimpleVans Logo" class="logo">
+                <img src="{{ asset('images/logo_with-tag.png') }}" alt="PimpleVans Logo" class="logo">
             </a>
         </h1>
         
