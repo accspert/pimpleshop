@@ -17,7 +17,7 @@
             <div class="product-image">
                 <a href="{{ route('products.show', $product->id) }}">
                     @if ($product->image_path)
-<img src="{{ asset('storage/' . $product->image_path) }}" alt="{{ $product->name }}">
+<img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}">
                     @endif
                 </a>
             </div>
