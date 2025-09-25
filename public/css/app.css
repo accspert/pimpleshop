@@ -16,8 +16,6 @@ body {
 
 }
 
-
-/* Reusable container for content width */
 .container {
     max-width: 80vw;
     margin: 0 auto;
@@ -29,7 +27,6 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* --- Header & Navigation --- */
 header {
     position: static;
     width: 100%;
@@ -73,7 +70,6 @@ nav a:hover {
     color: #888;
 }
 
-/* --- Section Styling --- */
 section {
     min-height: 100vh;
     display: flex;
@@ -82,23 +78,16 @@ section {
     text-align: center;
 }
 
-/* Specific section styles */
 #hero {
     background-image: url('/images/hero.png');
     background-size: cover;
-    /* This makes the image cover the entire section */
     background-position: center;
-    /* This centers the image in the section */
     background-repeat: no-repeat;
-    /* Prevents the image from repeating */
     color: #fff;
-    /* Change text color to white for better contrast on a dark image */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    /* Adds shadow for readability */
     min-height: 100vh;
 }
 
-/* Add a style for the hero section's H2 and P for better visibility */
 #hero h2,
 #hero p {
     color: #fff;
@@ -135,41 +124,7 @@ section {
     color: #fff;
 }
 
-.whatsapp-button {
-    display: inline-block;
-    background-color: #25d366;
-    /* WhatsApp's green color */
-    color: #fff;
-    padding: 15px 30px;
-    margin-top: 100px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 50px;
-    /* Makes the button rounded */
-    transition: background-color 0.3s ease;
-}
 
-.whatsapp-button:hover {
-    background-color: #128c7e;
-    /* A slightly darker green for the hover effect */
-}
-
-#about {
-    background-image: url('pics/about.png');
-    /* Make sure the filename matches! */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    min-height: 80vh;
-}
-
-#product {
-    background-color: #fff;
-}
-
-/* Product Grid Styling */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -225,23 +180,6 @@ section {
     font-size: 0.9rem;
 }
 
-.furniture-item {
-    text-align: center;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.furniture-item img {
-    width: 100%;
-    height: auto;
-}
-
-.furniture-item p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #555;
-}
 
 #contact {
     min-height: 20vh;
@@ -256,36 +194,6 @@ footer {
     color: #fff;
 }
 
-/* Styling for the form container */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form label {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: 1rem;
-    width: 100%;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
-}
-/* --- Shopping Cart Table Styling --- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -331,16 +239,12 @@ tbody tr:hover {
     text-align: center;
 }
 
-.checkout-btn:hover {
-    background-color: #007bff;
-}
-
 .cart-empty {
     text-align: center;
     font-size: 1.25rem;
     color: #888;
 }
-/* --- Checkout Page Styling --- */
+
 .checkout-form {
     display: flex;
     flex-direction: column;
@@ -354,20 +258,23 @@ tbody tr:hover {
 
 .form-group {
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .form-group label {
     display: block;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 .form-control {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: inherit;
     transition: border-color 0.3s ease;
 }
@@ -410,22 +317,6 @@ tbody tr:hover {
     margin-top: 1rem;
 }
 
-/* Reusing the general .button styling for consistency */
-.checkout-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 2rem;
-    background-color: #0056b3;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
 .checkout-btn:hover {
     background-color: #007bff;
 }
@@ -446,19 +337,41 @@ tbody tr:hover {
     color: #155724;
     border: 1px solid #c3e6cb;
 }
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
 
-    nav ul {
-        margin-top: 10px;
-    }
-    section {
-        padding: 60px 0;
-
-    }
+.profile-forms {
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.profile-update-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.profile-update-form header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.profile-update-form h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.button-danger {
+    background-color: #dc3545;
+}
+
+.button-danger:hover {
+    background-color: #c82333;
+}
+
 /* --- Hamburger Menu Styling --- */
 .hidden-checkbox {
     display: none; /* Hide the checkbox from view */
@@ -478,46 +391,65 @@ tbody tr:hover {
     background-color: #333;
     transition: all 0.3s ease;
 }
-
-/* --- Mobile Navigation --- */
+.form-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 24px; 
+    margin-top: 2rem; 
+}
+.form-group .form-control {
+    width: 100%;
+}
 @media (max-width: 768px) {
     header .container {
         flex-wrap: wrap;
+        flex-direction: column;
     }
-    
-    .hamburger-menu {
-        display: flex; /* Display the hamburger icon on small screens */
-    }
-    
-    nav#main-nav {
-        display: none; /* Hide the navigation menu by default on small screens */
-        width: 100%;
-        background-color: #f7f7f7;
-        padding-top: 1rem;
-        position: absolute;
-        top: 100px; /* Adjust this value to match your header's height */
-        left: 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    
-    nav#main-nav ul {
+
+    nav ul {
+        margin-top: 10px;
         flex-direction: column;
         gap: 0;
     }
-    
-    nav#main-nav li {
+
+    nav li {
         width: 100%;
     }
-    
-    nav#main-nav a {
+
+    nav a {
         display: block;
         padding: 10px 0;
         border-bottom: 1px solid #eee;
         text-align: center;
     }
-    
-    /* This is the key: when the checkbox is checked, display the navigation */
+
+    /* Rules for sections */
+    section {
+        padding: 60px 0;
+    }
+
+    /* Rules for the hamburger menu */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Rules for the main navigation menu */
+    nav#main-nav {
+        display: none;
+        width: 100%;
+        background-color: #f7f7f7;
+        padding-top: 1rem;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
     .hidden-checkbox:checked ~ nav#main-nav {
         display: block;
+    }
+        .form-grid-layout {
+        grid-template-columns: 1fr; 
+        gap: 16px;
     }
 }

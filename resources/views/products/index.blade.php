@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Unsere Möbel')
+@section('title', 'Deine neuen Möbel')
 
 @section('content')
 <div class="container">
-    <h1>Ihre neuen Möbel</h1>
+    <h1>Deine neuen Möbel</h1>
     @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}

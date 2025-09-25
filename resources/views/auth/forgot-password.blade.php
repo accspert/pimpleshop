@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Forgot Password')
+@section('title', 'Passwort vergessen')
 
 @section('content')
     <div class="container">
-        <h1 style="text-align: center;">Forgot Password</h1>
-        <p style="text-align: center;">Forgot your password? No problem. Just let us know your email address and we will email you a password reset link.</p>
+        <h1 style="text-align: center;">Passwort vergessen</h1>
+        <p style="text-align: center;">Bitte gib deine Email an, ein Link für Passwort setzen wird gesendet.</p>
 
         @if (session('status'))
             <div class="alert alert-success">
@@ -21,7 +21,7 @@
                 <input id="email" type="email" name="email" class="form-control" value="{{ old('email') }}" required autofocus>
             </div>
 
-            <button type="submit" class="checkout-btn" style="margin-top: 2rem;">Email Password Reset Link</button>
+            <button type="submit" class="checkout-btn" style="margin-top: 2rem;">Link senden</button>
         </form>
     </div>
 @endsection

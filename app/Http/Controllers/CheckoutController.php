@@ -74,10 +74,16 @@ class CheckoutController extends Controller
 
             session()->forget('cart');
 
-            
+
             DB::commit();
-            Mail::to('android.aktion@gmail.com')->send(new NewOrderMail($order));
-            
+            // Find the administrator's email in the database
+            $admin = \App\Models\User::where('is_admin', 1)->first();
+
+            // Check if an admin was found before sending the email
+            if ($admin) {
+                Mail::to($admin->email)->send(new NewOrderMail($order));
+            }
+
             return redirect()->route('checkout.success')->with('success', 'Deine Bestellung wurde aufgegeben');
         } catch (\Exception $e) {
             DB::rollBack();

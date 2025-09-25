@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Reset Password')
+@section('title', 'Passwort neu setzen')
 
 @section('content')
     <div class="container">
-        <h1>Reset Password</h1>
+        <h1>Passwort neu setzen</h1>
 
         <form method="POST" action="{{ route('password.store') }}">
             @csrf
@@ -17,17 +17,17 @@
             </div>
 
             <div class="mt-4">
-                <label for="password">Password</label>
+                <label for="password">Passwort</label>
                 <input id="password" type="password" name="password" required>
             </div>
 
             <div class="mt-4">
-                <label for="password_confirmation">Confirm Password</label>
+                <label for="password_confirmation">Passwort neu setzen</label>
                 <input id="password_confirmation" type="password" name="password_confirmation" required>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <button type="submit" class="button">Reset Password</button>
+                <button type="submit" class="button">Passwort neu setzen</button>
             </div>
         </form>
     </div>
