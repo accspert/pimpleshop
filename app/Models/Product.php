@@ -19,7 +19,17 @@ class Product extends Model
         'price',
         'description',
         'image_path',
+        'images',
         'category_id',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'images' => 'array',
     ];
 
     /**

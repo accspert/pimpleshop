@@ -38,23 +38,37 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate the form data, including the image
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Validation rules for the image
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Primary image
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Additional images
         ]);
 
-        // Handle the image upload
-        $imagePath = $request->file('image')->store('products', 'public');
+        $imagePaths = [];
+        $primaryImagePath = null;
 
-        // Create the product record with the image path
+        // Handle primary image upload
+        if ($request->hasFile('image')) {
+            $primaryImagePath = $request->file('image')->store('products', 'public');
+            $imagePaths[] = $primaryImagePath;
+        }
+
+        // Handle additional images upload
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imagePaths[] = $image->store('products', 'public');
+            }
+        }
+
+        // Create the product record with the image paths
         Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
-            'image_path' => $imagePath,
+            'image_path' => $primaryImagePath, // Save primary image path
+            'images' => $imagePaths, // Save all image paths as JSON
         ]);
 
         return redirect()->route('products.index')->with('success', 'Product created successfully!');

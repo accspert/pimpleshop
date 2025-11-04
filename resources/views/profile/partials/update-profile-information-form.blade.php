@@ -1,6 +1,6 @@
 <section class="profile-update-form">
     
-    <form method="post" action="{{ route('profile.update') }}" class="form-grid-layout">
+    <form method="post" action="{{ route('profile.update') }}">
         @csrf
         @method('patch')
         
@@ -41,7 +41,7 @@
             @enderror
         </div>
         
-        <div class="form-group save-actions" style="grid-column: span 2;"> 
+        <div class="form-group save-actions"> 
             <button type="submit" class="button">{{ __('Sichern') }}</button>
             @if (session('status') === 'profile-updated')
                 <p class="alert alert-success">{{ __('Gespeichert') }}</p>

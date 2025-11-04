@@ -12,9 +12,70 @@
         {{ session('success') }}
     </div>
     @endif
-    @if ($product->image_path)
-<img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}" style="max-width: 400px;">
+    @if ($product->images && count($product->images) > 0)
+    <div class="gallery">
+        <div class="main-image">
+            <img src="{{ asset($product->images[0]) }}" alt="{{ $product->name }}" id="mainImage">
+        </div>
+        <div class="thumbnails">
+            @foreach ($product->images as $image)
+            <img src="{{ asset($image) }}" alt="{{ $product->name }}" class="thumbnail {{ $loop->first ? 'active' : '' }}">
+            @endforeach
+        </div>
+    </div>
+    @elseif ($product->image_path)
+    <div class="gallery">
+        <div class="main-image">
+            <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}" id="mainImage">
+        </div>
+        <div class="thumbnails">
+            <img src="{{ asset($product->image_path) }}" alt="{{ $product->name }}" class="thumbnail active">
+        </div>
+    </div>
     @endif
+
+<style>
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+    .main-image {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .main-image img {
+        max-width: 400px;
+        max-height: 400px;
+    }
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .thumbnail.active {
+        border-color: #007bff;
+    }
+</style>
+
+<script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            mainImage.src = this.src;
+            document.querySelector('.thumbnail.active').classList.remove('active');
+            this.classList.add('active');
+        });
+    });
+</script>
+
 
     <p>{{ $product->description }}</p>
     <p>Preis: CHF{{ number_format($product->price, 2) }}</p>
