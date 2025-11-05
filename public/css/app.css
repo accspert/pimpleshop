@@ -17,8 +17,10 @@ body {
 }
 
 .container {
-    max-width: 80vw;
+    width: 100%;
+    max-width: 1200px; /* A reasonable max-width for larger screens */
     margin: 0 auto;
+    padding: 0 20px; /* Add horizontal padding */
 }
 
 h1,
@@ -139,29 +141,48 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between; /* Distribute space evenly */
     padding: 1.5rem 1.5rem;
+    gap: 1rem; /* Add consistent vertical spacing between items */
 }
 
 .product-card h2 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    height: 100px;
+    /* Removed fixed height */
+}
+
+.product-price {
+    /* Removed fixed height */
+}
+
+.product-detail {
+    /* Removed fixed height */
 }
 
 .product-image {
-    height: 300px;
+    height: 300px; /* Fixed height for the image container */
+    overflow: hidden; /* Hide overflowing parts of the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.product-price {
-    height: 50px;
-}
-.product-detail {
-    height: 30px;
-}
-
 .product-card img {
     width: 100%;
-    height: auto;
+    height: 100%; /* Make image take full height of its container */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+
+.main-image img {
+    max-width: 400px;
+    max-height: 400px;
+    transition: transform 0.3s ease; /* Smooth transition for zoom */
+    cursor: zoom-in; /* Indicate zoomable */
+    transform-origin: center center; /* Zoom from the center */
+}
+
+.main-image img:hover {
+    transform: scale(1.5); /* Zoom in by 20% on hover */
 }
 
 .product-card a {
