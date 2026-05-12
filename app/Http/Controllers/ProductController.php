@@ -51,14 +51,14 @@ class ProductController extends Controller
 
         // Handle primary image upload
         if ($request->hasFile('image')) {
-            $primaryImagePath = $request->file('image')->store('products', 'public');
+            $primaryImagePath = 'storage/' . $request->file('image')->store('products', 'public');
             $imagePaths[] = $primaryImagePath;
         }
 
         // Handle additional images upload
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                $imagePaths[] = $image->store('products', 'public');
+                $imagePaths[] = 'storage/' . $image->store('products', 'public');
             }
         }
 
