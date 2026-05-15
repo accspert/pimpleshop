@@ -6,4 +6,4 @@ Disallow: /login/
 Disallow: /register/
 Disallow: /password/
 
-Sitemap: http://www.pimplevans.ch/sitemap.xml
+Sitemap: http://www.handherzholz.ch/sitemap.xml
