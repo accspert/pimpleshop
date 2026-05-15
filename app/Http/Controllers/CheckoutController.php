@@ -76,13 +76,9 @@ class CheckoutController extends Controller
 
 
             DB::commit();
-            // Find the administrator's email in the database
-            $admin = \App\Models\User::where('is_admin', 1)->first();
 
-            // Check if an admin was found before sending the email
-            if ($admin) {
-                Mail::to($admin->email)->send(new NewOrderMail($order));
-            }
+            // Send order notification email to the shop owner
+            Mail::to('info@handherzholz.eu')->send(new NewOrderMail($order));
 
             return redirect()->route('checkout.success')->with('success', 'Deine Bestellung wurde aufgegeben');
         } catch (\Exception $e) {
